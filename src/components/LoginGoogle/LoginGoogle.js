@@ -32,7 +32,7 @@ export default class LoginGoogle extends Component {
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
-          cookiePolicy={"single_host_origin"}
+          cookiePolicy={"single_host_origin; SameSite=None; Secure"}
         />
       </div>
     );
