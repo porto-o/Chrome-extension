@@ -29,6 +29,7 @@ export function saveTaskApi(data) {
         headers: {
             "Content-type": "application/json",
         },
+        body: JSON.stringify(data)
     };
 
     return fetch(url, params)
