@@ -24,6 +24,10 @@ export default class LoginGoogle extends Component {
     })
   };
 
+  onFinish = async () => {
+    //const result = await signUpApi(values)
+  }
+
   render() {
     return (
       <div>

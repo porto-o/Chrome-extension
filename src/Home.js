@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginGoogle from './components/LoginGoogle/LoginGoogle';
+import LoginGoogle from './components/Forms/LoginGoogle';
 
 class Home extends React.Component {
     render() {
