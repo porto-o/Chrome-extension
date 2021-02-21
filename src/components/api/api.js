@@ -22,13 +22,14 @@ export function SignUp(data){
         });
 }
 
-export function saveTaskApi(data) {
-    const url = `${BASE_PATH}/${API_VERSION}/addTask/${data}`;
+export function saveTaskApi(id, data) {
+    const url = `${BASE_PATH}/${API_VERSION}/addTask/${id}`;
     const params = {
         method: "POST",
         headers: {
             "Content-type": "application/json",
         },
+        body: JSON.stringify(data)
     };
 
     return fetch(url, params)
