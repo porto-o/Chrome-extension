@@ -11,7 +11,7 @@ class Popup extends React.Component {
     render()  {
         return (
             <div className="App">
-                <h1 style={{margin:0 + "px"}}>TodoTime</h1>
+                <h1 style={{margin:0 + "px"}}>ToDoTime</h1>
                 <TaskList />
             </div>
         );
