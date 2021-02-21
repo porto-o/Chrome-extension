@@ -29,8 +29,6 @@ class TaskItem extends React.Component {
         }
         this.setState({taskinfo: text});
         //Connecting to api
-        const result = await saveTaskApi(this.props.itemid, this.state.taskinfo);
-        console.log(result);
     }
 
     handleBlur = (event) => {
@@ -40,6 +38,8 @@ class TaskItem extends React.Component {
     handleSubmit = async (event) => {
         if (event.which === 13) {
             this.handleSave(event.target.value);
+            const hours = prompt("How many hours? ")
+            const result = await saveTaskApi(this.props.itemid, this.state.taskinfo, hours);
         }
     }
 

@@ -2,11 +2,17 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const TaskSchema = Schema({
-    title: {
+    id: {
         type: String
     },
     content: {
         type:String
+    },
+    hours: {
+        type: String
+    },
+    date: {
+        type: Date
     }
 })
 

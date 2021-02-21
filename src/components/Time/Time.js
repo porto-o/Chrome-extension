@@ -1,5 +1,6 @@
 import React from 'react';
 import './Time.css';
+import {saveTaskApi} from "../api/api";
 
 class Time extends React.Component {
     constructor (props) {
@@ -34,8 +35,10 @@ class Time extends React.Component {
             this.handleSave(event.target.value);
         }
     }
-    handleChange = (event) => {
+    handleChange = async (event) => {
         this.setState({ time: event.target.value });
+
+        const result = await saveTaskApi(this.state.id,"",this.state.time)
     }
     render() {
         return (
