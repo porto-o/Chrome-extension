@@ -25,7 +25,6 @@ const Register = () => {
 
     return (
         <Fragment>
-            <h1>Formulario</h1>
             <form className="row" onSubmit={sendData}>
                 <div className="col-md-3">
                     <input type="text" placeholder="User name" className="form-control" onChange={handleInputChange} name="userName"></input>

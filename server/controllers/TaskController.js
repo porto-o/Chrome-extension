@@ -21,6 +21,18 @@ const addTask = (req,res) => {
     }
 }
 
+const getTask = (req,res) => {
+    TaskModel.find("content", (err,resTask) => {
+        if(err){
+            console.log(err)
+        }else{
+            console.log(resTask)
+            res.status(200).send({message: resTask})
+        }
+    })
+}
+
 module.exports = {
-    addTask
+    addTask,
+    getTask
 }

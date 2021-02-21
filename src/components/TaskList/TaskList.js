@@ -5,9 +5,11 @@ import './TaskList.css';
 const key = 'tasklist';
 const prefixtask = 'task';
 const prefixtime = 'time';
-function RenderList(props) {
+
+function RenderList (props) {
     const reversed = props.items.slice().reverse();
-    const list = reversed.map((item) => 
+
+    const list = reversed.map((item) =>
         <div key={item}>
             <Item itemid={item} focus={item === reversed[0]} taskprefix={prefixtask} timeprefix={prefixtime} delete={props.delete}/>
         </div>
@@ -34,8 +36,11 @@ class TaskList extends React.Component {
             let list = JSON.parse(window.localStorage.getItem(key)) || [];
             this.state = { tasklist: list };
         }
-    } 
+    }
+
+
     addNew = () => {
+
         let curr = this.state.tasklist;
         curr.push(Date.now().toString());
         this.setState({tasklist: curr});
@@ -46,6 +51,7 @@ class TaskList extends React.Component {
             window.localStorage.setItem(key, JSON.stringify(curr));
         }
     }
+
     clearAll = () => {
         if (chrome.storage) {
             chrome.storage.local.clear();
