@@ -16,7 +16,7 @@
         "default_icon": {
             "192": "todotime.png"
         },
-        "default_title": "TodoTime",
+        "default_title": "ToDoList",
         "default_popup": "popup.html"
     },
     "options_page": "options.html",
