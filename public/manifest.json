@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "TodoTime",
+    "name": "ToDoTime",
     "version": "0.1",
     "description": "Manage your tasks from your browser",
     "permissions": [
