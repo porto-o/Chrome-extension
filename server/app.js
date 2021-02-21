@@ -1,12 +1,13 @@
 const express = require("express")
 const bodyParser = require("body-parser");
-
+const morgan = require("morgan")
 const app = express()
 const {API_VERSION} = require('./config')
 
 //Load routings
 //...
 const TaskRoutes = require("./routers/routes");
+
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -18,6 +19,8 @@ app.use((req, res, next) => {
     res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
+
+app.use(morgan('dev'));
 app.use(`/api/${API_VERSION}`, TaskRoutes)
 
 module.exports = app;

@@ -1,9 +1,10 @@
 import React from 'react';
 import './TaskItem.css';
 import {saveTaskApi} from "../api/api";
-
 const prefix = 'task';
+
 class TaskItem extends React.Component {
+
     constructor (props) {
         super(props);
         let key = prefix + this.props.itemid;
@@ -21,16 +22,16 @@ class TaskItem extends React.Component {
     }
 
     handleSave = async (text) => {
+        /*
         if (chrome.storage) {
             chrome.storage.local.set({[prefix + this.props.itemid]: text});
         }
         else {
             window.localStorage.setItem(prefix + this.props.itemid, text);
-        }
+        }*/
         this.setState({taskinfo: text});
         //Connecting to api
-        console.log(this.state.taskinfo)
-        const result = await saveTaskApi(this.state.taskinfo)
+
 
     }
 
@@ -38,14 +39,17 @@ class TaskItem extends React.Component {
         this.handleSave(event.target.value);
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         if (event.which === 13) {
             this.handleSave(event.target.value);
+            const result = await saveTaskApi(this.state.taskinfo)
         }
     }
+
     handleChange = (event) => {
         this.setState({ taskinfo: event.target.value });
     }
+
     render() {
         return (
             <input 

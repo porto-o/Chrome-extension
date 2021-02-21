@@ -9,10 +9,12 @@ const addTask = (req,res) => {
     if(!content){
         res.status(500).send({message: "Empty data"})
     }else{
+        task.content = content
         task.save((err,taskStored) => {
             if(err){
                 res.status(500).send({message:"Error in saving on DB"})
             }else{
+                console.log("Saved lol")
                 res.status(200)
             }
         })
