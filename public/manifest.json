@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Extension Name",
+    "name": "Blueprint Extension",
     "version": "0.1",
     "description": "Some Description",
     "permissions": [
@@ -25,5 +25,8 @@
         "default_title": "Popup",
         "default_popup": "popup.html"
     },
-    "options_page": "options.html"
+    "options_page": "options.html",
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem https://apis.google.com 'self';"
+    }
 }

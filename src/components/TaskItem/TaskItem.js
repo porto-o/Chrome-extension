@@ -1,4 +1,5 @@
 import React from 'react';
+import './TaskItem.css';
 
 const prefix = 'task';
 class TaskItem extends React.Component {
@@ -8,7 +9,7 @@ class TaskItem extends React.Component {
         if (chrome.storage) {
             this.state = { taskinfo: '' };
             chrome.storage.local.get(key, res => {
-                let task = res || '';
+                let task = res[key] || '';
                 this.setState({ taskinfo: task });
             });
         }
