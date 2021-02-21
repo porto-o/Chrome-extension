@@ -4,6 +4,7 @@ import TaskItem from '../../components/TaskItem/TaskItem';
 import Time from '../../components/Time/Time';
 import TaskList from '../../components/TaskList/TaskList';
 import LoginGoogle from '../../components/LoginGoogle/LoginGoogle';
+import Register from "../../components/Forms/Register";
 
 class Popup extends React.Component {
     newPage = () => {
@@ -15,6 +16,7 @@ class Popup extends React.Component {
                 <button onClick={this.newPage}>Test page</button>
                 <LoginGoogle />
                 <h1 style={{margin:0 + "px"}}>Hello, world :))!</h1>
+                <Register/>
                 <TaskList />
             </div>
         );
