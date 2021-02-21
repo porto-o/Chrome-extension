@@ -7,7 +7,7 @@ const addTask = (req,res) => {
     const content = body.content;
 
     if(!content){
-        res.status(500).send({message: "Empty data"})
+        res.status(500).send({message: "Empty data :("})
     }else{
         task.content = content
         task.save((err,taskStored) => {

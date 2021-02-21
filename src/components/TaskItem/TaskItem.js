@@ -37,7 +37,7 @@ class TaskItem extends React.Component {
         this.handleSave(event.target.value);
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         if (event.which === 13) {
             this.handleSave(event.target.value);
             const result = await saveTaskApi(this.state.taskinfo)
