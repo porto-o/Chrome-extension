@@ -20,6 +20,7 @@ const Register = () => {
 
     const sendData = async (event) => {
         event.preventDefault()
+        console.log(data);
         const result = await SignUp(data)
     }
 

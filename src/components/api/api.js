@@ -2,7 +2,7 @@ import { BASE_PATH, API_VERSION } from "./config";
 
 export function SignUp(data){
     console.log(data)
-    const url = `${BASE_PATH}/${API_VERSION}/signUp/${data}`;
+    const url = `${BASE_PATH}/${API_VERSION}/signUp/${JSON.stringify(data)}`;
     const params = {
         method: "POST",
         headers: {

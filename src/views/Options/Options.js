@@ -1,14 +1,14 @@
 import React from 'react'
 import './Options.css'
+import TimeList from '../../components/TimeList/TimeList';
 
 class Options extends React.Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">hi I'm Ismael</header>
-                <p>hello, world</p>
+                <h1 style={{color: 'white'}}>Scheduling page, coming soon!</h1>
+                <TimeList />
             </div>
-            
         );
     }
 }

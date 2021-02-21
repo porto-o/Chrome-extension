@@ -1,6 +1,7 @@
 const SignUp = (req,res) => {
-    const {userName, password} = req.params
-    console.log(userName)
+    const {userName, password} = JSON.parse(req.params.data)
+    console.log('USERNAME: ' + userName)
+    console.log('Password: ' + password);
 }
 
 module.exports = {
