@@ -5,11 +5,16 @@ const addTask = (req,res) => {
     const task = new TaskModel();
     const body = req.params;
     const content = body.content;
+    const id = body.id
+    const time = body.time
 
-    if(!content){
+    if(!content || !id){
         res.status(500).send({message: "Empty data :("})
     }else{
-        task.content = content
+        task.id = id;
+        task.content = content;
+        task.date = Date.now()
+        task.hours = time;
         task.save((err,taskStored) => {
             if(err){
                 res.status(500).send({message:"Error in saving on DB"})

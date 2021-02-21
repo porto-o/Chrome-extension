@@ -22,8 +22,8 @@ export function SignUp(data){
         });
 }
 
-export function saveTaskApi(id, data) {
-    const url = `${BASE_PATH}/${API_VERSION}/addTask/${id}`;
+export function saveTaskApi(id, data,time) {
+    const url = `${BASE_PATH}/${API_VERSION}/addTask/${id}/${data}/${time}`;
     const params = {
         method: "POST",
         headers: {
