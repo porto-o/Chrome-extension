@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Extension Name",
+    "name": "Blueprint Extension",
     "version": "0.1",
     "description": "Some Description",
     "permissions": [
