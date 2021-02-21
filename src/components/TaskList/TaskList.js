@@ -1,7 +1,5 @@
 import React from 'react';
-import TaskItem from '../TaskItem/TaskItem';
-import Time from '../Time/Time';
-import DeleteButton from '../DeleteButton/DeleteButton';
+import Item from '../Item/Item';
 import './TaskList.css';
 
 const key = 'tasklist';
@@ -11,9 +9,7 @@ function RenderList(props) {
     const reversed = props.items.slice().reverse();
     const list = reversed.map((item) => 
         <div className="Item" key={item}>
-            <TaskItem itemid={item} focus={item === reversed[0]} />
-            <Time itemid={item} focus={false} />
-            <DeleteButton taskprefix={prefixtask} timeprefix={prefixtime} delete={props.delete} itemid={item}/>
+            <Item itemid={item} focus={item === reversed[0]} taskprefix={prefixtask} timeprefix={prefixtime} delete={props.delete}/>
         </div>
     );
     return (

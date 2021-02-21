@@ -1,11 +1,10 @@
 import React from 'react';
 import './Time.css';
 
-const prefix = 'time';
 class Time extends React.Component {
     constructor (props) {
         super(props);
-        let key = prefix + this.props.itemid;
+        let key = this.props.prefix + this.props.itemid;
         if (chrome.storage) {
             this.state = { time: '' };
             chrome.storage.local.get(key, res => {
@@ -20,10 +19,10 @@ class Time extends React.Component {
     }
     handleSave = (curr) => {
         if (chrome.storage) {
-            chrome.storage.local.set({[prefix + this.props.itemid]: curr});
+            chrome.storage.local.set({[this.props.prefix + this.props.itemid]: curr});
         }
         else {
-            window.localStorage.setItem(prefix + this.props.itemid, curr);
+            window.localStorage.setItem(this.props.prefix + this.props.itemid, curr);
         }
         this.setState({time: curr});
     }
@@ -41,8 +40,7 @@ class Time extends React.Component {
     render() {
         return (
             <input 
-                type='number' 
-                autoFocus={this.props.focus}
+                type='number'
                 value={this.state.time}
                 onBlur={this.handleBlur}
                 onChange={this.handleChange}

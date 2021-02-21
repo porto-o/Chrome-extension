@@ -1,11 +1,10 @@
 import React from 'react';
 import './TaskItem.css';
 
-const prefix = 'task';
 class TaskItem extends React.Component {
     constructor (props) {
         super(props);
-        let key = prefix + this.props.itemid;
+        let key = this.props.prefix + this.props.itemid;
         if (chrome.storage) {
             this.state = { taskinfo: '' };
             chrome.storage.local.get(key, res => {
@@ -20,10 +19,10 @@ class TaskItem extends React.Component {
     }
     handleSave = (text) => {
         if (chrome.storage) {
-            chrome.storage.local.set({[prefix + this.props.itemid]: text});
+            chrome.storage.local.set({[this.props.prefix + this.props.itemid]: text});
         }
         else {
-            window.localStorage.setItem(prefix + this.props.itemid, text);
+            window.localStorage.setItem(this.props.prefix + this.props.itemid, text);
         }
         this.setState({taskinfo: text});
     }
