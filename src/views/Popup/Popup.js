@@ -1,6 +1,8 @@
 import React from 'react'
 import './Popup.css'
 import TaskItem from '../../components/TaskItem/TaskItem';
+import Time from '../../components/Time/Time';
+import TaskList from '../../components/TaskList/TaskList';
 import LoginGoogle from '../../components/LoginGoogle/LoginGoogle';
 
 class Popup extends React.Component {
@@ -13,7 +15,7 @@ class Popup extends React.Component {
                 <button onClick={this.newPage}>Test page</button>
                 <LoginGoogle />
                 <h1 style={{margin:0 + "px"}}>Hello, world :))!</h1>
-                <TaskItem itemid={'testing'} focus={false}/>
+                <TaskList />
             </div>
         );
     }
