@@ -4,6 +4,8 @@ import Options from './views/Options/Options';
 import Home from './Home';
 import { Switch, Route } from 'react-router-dom';
 class App extends React.Component {
+
+
     render() {
         return (
             <div>

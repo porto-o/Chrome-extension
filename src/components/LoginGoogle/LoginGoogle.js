@@ -14,8 +14,6 @@ export default class LoginGoogle extends Component {
   }
  
   responseGoogle = (response) => {
-    console.log(response);
-    console.log(response.profileObj);
     const nameRes = response.profileObj.name
     const emailRes = response.profileObj.email
     this.setState({
@@ -23,6 +21,10 @@ export default class LoginGoogle extends Component {
       email: emailRes
     })
   };
+
+  onFinish = async () => {
+    //const result = await signUpApi(values)
+  }
 
   render() {
     return (
@@ -32,7 +34,6 @@ export default class LoginGoogle extends Component {
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
-          cookiePolicy={"single_host_origin; SameSite=None; Secure"}
         />
       </div>
     );
