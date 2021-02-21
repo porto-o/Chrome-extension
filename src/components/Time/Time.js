@@ -13,7 +13,7 @@ class Time extends React.Component {
             });
         }
         else {
-            let curr = window.localStorage.getItem(key) || '';
+            let curr = JSON.parse(window.localStorage.getItem(key)) || '';
             this.state = { time: curr };
         }
     }
@@ -22,7 +22,7 @@ class Time extends React.Component {
             chrome.storage.local.set({[this.props.prefix + this.props.itemid]: curr});
         }
         else {
-            window.localStorage.setItem(this.props.prefix + this.props.itemid, curr);
+            window.localStorage.setItem(this.props.prefix + this.props.itemid, JSON.stringify(curr));
         }
         this.setState({time: curr});
     }

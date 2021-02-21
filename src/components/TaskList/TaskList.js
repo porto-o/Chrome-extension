@@ -8,7 +8,7 @@ const prefixtime = 'time';
 function RenderList(props) {
     const reversed = props.items.slice().reverse();
     const list = reversed.map((item) => 
-        <div className="Item" key={item}>
+        <div key={item}>
             <Item itemid={item} focus={item === reversed[0]} taskprefix={prefixtask} timeprefix={prefixtime} delete={props.delete}/>
         </div>
     );

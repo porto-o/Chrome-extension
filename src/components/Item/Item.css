@@ -1,3 +1,8 @@
-.Item {
+.ItemDone {
+    background-color: lightgreen;
+    margin: 5px;
+}
+.ItemNotDone {
+    background-color: pink;
     margin: 5px;
 }
